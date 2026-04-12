@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChamadosPro", "ChamadosPro.csproj", "{FFA60C62-2B68-9789-27BA-CE21E44E4911}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFA60C62-2B68-9789-27BA-CE21E44E4911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA60C62-2B68-9789-27BA-CE21E44E4911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA60C62-2B68-9789-27BA-CE21E44E4911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA60C62-2B68-9789-27BA-CE21E44E4911}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {240F9497-FD30-41BC-9586-301FD327FE8E}
+	EndGlobalSection
+EndGlobal
