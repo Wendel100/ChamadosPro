@@ -1,12 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Email
 <link rel="stylesheet" href="~/css/cadastrar.css" asp-append-version="true" />
-<form>
+<form asp-action="enviar" method="post">
   <div class="form-group">
-    <label for="exampleFormControlInput1">Enviar para Email</label>
+    <label asp-for="ToEmail">Enviar para Email</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
+    <div class="form-group">
+    <label asp-for="ToName">Assunto</label>
+  <input asp-for="ToName" class="form-control" type="text" placeholder="Default input">
+    </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Categoria</label>
     <select class="form-control" id="exampleFormControlSelect1">
@@ -15,8 +17,8 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Descricao</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label asp-for="Subject">Descricao</label>
+    <textarea asp-for="Subject" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <div class="form-group">
       <label for="exampleFormControlFile1">Anexar arquivo</label>
