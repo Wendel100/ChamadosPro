@@ -1,31 +1,59 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* ===== Reset / Base ===== */
 body {
-  margin-bottom: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    color: #2d3436;
+    margin: 0;
+    padding: 0;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* ===== Navbar ===== */
+.navbar {
+    background: linear-gradient(90deg, #6c63ff, #4b47c3);
+    padding: 0.8rem 1rem;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.navbar-nav .nav-link {
+    color: #f1f1f1 !important;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd369 !important;
+}
+/* ===== Buttons ===== */
+.btn-primary {
+    background: #6c63ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #5a52e0;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: #fff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer a {
+    color: #6c63ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }

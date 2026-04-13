@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/cadastrar.css" asp-append-version="true" />
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Enviar para Email</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Categoria</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Requisicao</option>
+      <option>Incidente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descricao</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+      <label for="exampleFormControlFile1">Anexar arquivo</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
