@@ -1,15 +1,23 @@
+using ChamadosPro.Models;
+using ChamadosPro.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChamadosPro.Controllers
 {
     public class ChamadosController : Controller
     {
-        // private readonly ILogger<ChamadosController> _logger;
+      private readonly ApiService _emailService;
+        public ChamadosController()
+    {
+        _emailService = new ApiService();
+    }
 
-        // public ChamadosController(ILogger<ChamadosController> logger)
-        // {
-        //     _logger = logger;
-        // }
+    [HttpPost("enviar")]
+    public IActionResult EnviarEmail(Email request)
+    {
+        var resposta = _emailService.EnviarEmail(request);
+        return Ok(resposta);
+    }
         public IActionResult Index()
         {
             return View();
