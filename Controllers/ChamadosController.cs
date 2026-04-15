@@ -6,21 +6,25 @@ namespace ChamadosPro.Controllers
 {
     public class ChamadosController : Controller
     {
-      private readonly ApiService _emailService;
-        public ChamadosController()
-    {
-        _emailService = new ApiService();
-    }
+        private readonly IEmailService _emailService;
 
-    [HttpPost("enviar")]
-    public IActionResult EnviarEmail(Email request)
-    {
-        var resposta = _emailService.EnviarEmail(request);
-        return Ok(resposta);
-    }
+        public ChamadosController(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult EnviarEmail(Email request)
+        {
+            var resposta = _emailService.EnviarEmail(request);
+
+            TempData["Mensagem"] = resposta;
+
+            return RedirectToAction("Index");
         }
     }
 }
