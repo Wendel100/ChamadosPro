@@ -1,3 +1,4 @@
+using System.Drawing;
 using ChamadosPro.Models;
 using RestSharp;
 
@@ -23,48 +24,15 @@ namespace ChamadosPro.Services
             var body = new
             {
               htmlContent = $@"
-<div style='font-family: Arial, sans-serif; max-width: 700px; margin: auto; line-height: 1.6;'>
-
+<div style='font-family: Arial, sans-serif;font-size: 14px; max-width: 700px; margin: auto; line-height: 1.6;'>
     <p style='text-align: right;'>
         Data: {DateTime.Now:dd/MM/yyyy}
-    </p>
-    <br/>
-
-    <p>
-        <strong>Destinatário:</strong> {email.ToName}
-    </p>
-
-    <p>
-        <strong>Assunto:</strong> {email.Subject}
-    </p>
-    <br/>
-
-    <p style='text-align: justify; text-indent: 40px;'>
-        Prezado(a),
-    </p>
-
-    <p style='text-align: justify; text-indent: 40px;'>
-        Venho por meio deste solicitar {email.ToName}.
-    </p>
-
-    <br/><br/>
-
-    <p style='text-align: justify; text-indent: 40px;'>
-        Agradeço pela atenção e fico no aguardo de um retorno.
-    </p>
-    <br/>
-    <p>
-        Atenciosamente,
-    </p>
-    <br/>
-    <p>
-        {email.ToName}
     </p>
 </div>",
                 sender = new
                 {
                     email = "darkrw100@gmail.com",
-                    name = "GerenciamentoDeChamados"
+                    name = "SEAC"
                 },
                 subject = email.ToName,
                 to = new[]

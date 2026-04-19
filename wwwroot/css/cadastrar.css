@@ -45,8 +45,8 @@ select.form-control {
 /* ===== File input ===== */
 .form-control-file {
     background: #f8f9fa;
-    padding: 8px;
-    margin-top: 10px;
+    padding: 4px;
+    margin-top: 4px;
 }
 
 /* ===== Submit button (caso adicione) ===== */
