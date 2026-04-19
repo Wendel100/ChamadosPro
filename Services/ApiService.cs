@@ -23,32 +23,33 @@ namespace ChamadosPro.Services
             var body = new
             {
               htmlContent = $@"
-<div style='font-family: Arial, sans-serif; max-width: 700px; margin: auto; line-height: 1.6;'>
+<div style=font-family: Arial, sans-serif; font-size: 14px; max-width: 700px; margin: auto; line-height: 1.6; color: #333;
+    
+    <!-- Data -->
+    <p style='text-align: right; margin-bottom: 30px;'>
+        {DateTime.Now:dd/MM/yyyy}
+    </p>
 
-    <p style='text-align: right;'>
-        Data: {DateTime.Now:dd/MM/yyyy}
-    </p>
-    <br/>
-    <br/>
-    <p style='text-align: justify; text-indent: 40px;'>
-        Prezado(a),{email.ToName}
-    </p>
-        <p>
-        <strong>Assunto:</strong> {email.Subject}
-    </p>
-    <br/>
-    <p style='text-align: justify; text-indent: 40px;'>
-        Agradeço pela atenção e fico no aguardo de um retorno.
-    </p>
-    <br/>
+    <!-- Saudação -->
     <p>
-        Atenciosamente,
+        Prezado(a) {email.ToEmail},
     </p>
-    <p> Renan wendel<br>
-    Analista de sistemas</p>
-    <br/>
-    <p>
-        {email.ToName}
+
+    <!-- Conteúdo -->
+    <p style='text-align: justify;'>
+        {email.Subject}
+    </p>
+
+    <!-- Fechamento -->
+    <p style='margin-top: 30px;'>
+        Agradeço pela atenção e fico no aguardo de seu retorno.
+    </p>
+
+    <!-- Assinatura -->
+    <p style='margin-top: 40px;'>
+        Atenciosamente,<br/><br/>
+        <strong>Renan Wendel</strong><br/>
+        Analista de Sistemas
     </p>
 </div>",
                 sender = new
