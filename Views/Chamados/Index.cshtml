@@ -1,5 +1,7 @@
 ﻿@model Email
+
 <link rel="stylesheet" href="~/css/cadastrar.css" asp-append-version="true" />
+ 
 @if (TempData["Mensagem"] != null)
 {
     <div class="alert alert-info">
@@ -7,32 +9,70 @@
     </div>
 }
 
-<form asp-action="EnviarEmail" method="post">
-  <div class="form-group">
-    <label asp-for="ToEmail">Enviar para Email</label>
-    <input asp-for="ToEmail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
+<form asp-action="EnviarEmail" method="post" enctype="multipart/form-data">
+
     <div class="form-group">
-    <label asp-for="ToName">Assunto</label>
-  <input asp-for="ToName" class="form-control" type="text" placeholder="Default input">
+        <label asp-for="ToEmail">Enviar para Email</label>
+        <input asp-for="ToEmail" type="email" class="form-control" placeholder="name@example.com">
     </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Categoria</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Requisicao</option>
-      <option>Incidente</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label asp-for="Subject">Descricao</label>
-    <textarea asp-for="Subject" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-      <label for="exampleFormControlFile1">Anexar arquivo</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-      <button type="submit" class="btn btn-primary"><i class="bi bi-plus-square"></i>Cadastrar</button>
-    <a class="btn btn-secondary" asp-action="Index" role="button">
-        <i class="bi bi-back"></i>Voltar
-    </a>
+    <div class="form-group">
+        <label>Tipo</label>
+        <select class="form-control" id="tipoSelect">
+            <option value="">Categoria</option>
+            <option value="Requisicao">Requisição</option>
+            <option value="Incidente">Incidente</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="ToName">Assunto</label>
+        <input asp-for="ToName" class="form-control" type="text" placeholder="Digite o assunto">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Subject">Descrição</label>
+        <textarea asp-for="Subject" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="arquivo">Anexar arquivo</label>
+        <input type="file" name="arquivo" class="form-control-file">
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-plus-square"></i> Enviar
+    </button>
+
+    <button class="btn btn-secondary" asp-action="Index">
+        <i class="bi bi-back"></i> Voltar
+    </button>
+
 </form>
+
+<script>
+document.getElementById("tipoSelect").addEventListener("change", function () {
+    var tipo = this.value;
+
+    var subject = document.getElementById("Subject");
+    var email = document.getElementById("ToEmail");
+    var toName = document.getElementById("ToName");
+
+    if (!email || !subject || !toName) return;
+
+    if (tipo === "Requisicao") {
+        email.value = "renanwendel100@gmail.com";
+        toName.value = "RESMA DE PAPEL A4 - USINA DE MARITUBA";
+        subject.value = "Boa noite, estamos precisando de 2 caixas de papel A4 para a usina de Benevides.";
+    } 
+    else if (tipo === "Incidente") {
+        email.value = "suporte@empresa.com";
+        toName.value = "MANUTENÇÃO DE IMPRESSORA RICOH - USINA DE MARITIBA";
+        subject.value = "Boa noite, precisamos de um técnico para a impressora RICOH da usina de Marituba, pois apresenta barulhos estranhos.";
+    } 
+    else {
+        email.value = "";
+        toName.value = "";
+        subject.value = "";
+    }
+});
+</script>

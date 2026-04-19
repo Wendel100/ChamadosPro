@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using ChamadosPro.Models;
 using RestSharp;
 
@@ -55,7 +56,7 @@ namespace ChamadosPro.Services
                 sender = new
                 {
                     email = "darkrw100@gmail.com",
-                    name = "GerenciamentoDeChamados"
+                    name = "SEAC"
                 },
                 subject = email.ToName,
                 to = new[]
